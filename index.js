@@ -1,64 +1,56 @@
 document.addEventListener('DOMContentLoaded', function () {
   const mapContainer = document.querySelector('.bd-map');
 
-  const divisions = [
-    {
-      name: 'Dhaka: SMET Services',
-      className: 'dhaka',
-      title: 'Dhaka',
-      shortText: 'Dhaka is the capital of Bangladesh.',
-      longText: 'Dhaka is the most densely populated city in Bangladesh and a major hub for commerce and culture.'
-    },
-    {
-      name: 'Chattogram: M/S Aladin Lpg',
-      className: 'chattogram',
-      title: 'Chattogram',
-      shortText: 'Chattogram is the major port city of Bangladesh.',
-      longText: 'Chattogram is known for its bustling port, vibrant trade, and natural beauty including hills and the Bay of Bengal.'
-    },
-    {
-      name: 'Barishal: Saad Motors Ltd.',
-      className: 'barishal',
-      title: 'Barishal',
-      shortText: 'Barishal is a city on the southern coast of Bangladesh.',
-      longText: 'Barishal is famous for its rivers and floating markets, making it a unique destination in the country.'
-    },
-    {
-      name: 'Khulna: Maria LPG Filling Station',
-      className: 'khulna',
-      title: 'Khulna',
-      shortText: 'Khulna is the gateway to the Sundarbans.',
-      longText: 'Khulna is known for its close proximity to the Sundarbans, the largest mangrove forest in the world.'
-    },
-    {
-      name: 'Rangpur: Saad Motors Limited LPG',
-      className: 'rangpur',
-      title: 'Rangpur',
-      shortText: 'Rangpur is a historic city in the north of Bangladesh.',
-      longText: 'Rangpur is known for its colonial history, agricultural richness, and diverse culture.'
-    },
-    {
-      name: 'Rajshahi: Modhu LPG Filling Station',
-      className: 'rajshahi',
-      title: 'Rajshahi',
-      shortText: 'Rajshahi is known as the Silk City of Bangladesh.',
-      longText: 'Rajshahi is famous for its silk industry, mangoes, and serene environment along the Padma River.'
-    },
-    {
-      name: 'Mymensingh: Bhuiyan LPG Filling Station',
-      className: 'mymensingh',
-      title: 'Mymensingh',
-      shortText: 'Mymensingh is a city rich in educational and cultural heritage.',
-      longText: 'Mymensingh is home to numerous historical sites and the prestigious Bangladesh Agricultural University.'
-    },
-    {
-      name: 'Sylhet: Jalalpur LPG Filling Station',
-      className: 'sylhet',
-      title: 'Sylhet',
-      shortText: 'Sylhet is a city surrounded by tea gardens and natural beauty.',
-      longText: 'Sylhet is known for its spiritual sites, lush tea gardens, and breathtaking landscapes.'
-    }
-  ];
+const divisions = [
+  {
+    name: 'Dhaka: SMET Services',
+    className: 'dhaka',
+    title: 'Dhaka',
+    location: '2/2, Pallabi, Mirpur, Dhaka – 1216'
+  },
+  {
+    name: 'Chattogram: M/S Aladin Lpg',
+    className: 'chattogram',
+    title: 'Chattogram',
+    location: 'Manikchari, Rangamati'
+  },
+  {
+    name: 'Barishal: Saad Motors Ltd.',
+    className: 'barishal',
+    title: 'Barishal',
+    location: 'Plot: A-41, Kawnia, Barishal, Bangladesh'
+  },
+  {
+    name: 'Khulna: Maria LPG Filling Station',
+    className: 'khulna',
+    title: 'Khulna',
+    location: 'Joy Bangla More, City Bypass, Khulna'
+  },
+  {
+    name: 'Rangpur: Saad Motors Limited LPG',
+    className: 'rangpur',
+    title: 'Rangpur',
+    location: 'Sathmatha, Rangpur'
+  },
+  {
+    name: 'Rajshahi: Modhu LPG Filling Station',
+    className: 'rajshahi',
+    title: 'Rajshahi',
+    location: 'Royna, Boraigram, Natore'
+  },
+  {
+    name: 'Mymensingh: Bhuiyan LPG Filling Station',
+    className: 'mymensingh',
+    title: 'Mymensingh',
+    location: 'Joypur, Ishwarganj, Mymensingh'
+  },
+  {
+    name: 'Sylhet: Jalalpur LPG Filling Station',
+    className: 'sylhet',
+    title: 'Sylhet',
+    location: 'Jalalpur, Nabiganj, Habiganj'
+  }
+];
 
   // Set the default active division class (use className, not name)
   let activeDivisionClass = 'dhaka';
@@ -77,8 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const detailsContainer = document.querySelector('.division-details');
     if (detailsContainer) {
       detailsContainer.querySelector('.division-title').textContent = division.title;
-      detailsContainer.querySelector('.division-short-text').textContent = division.shortText;
-      detailsContainer.querySelector('.division-long-text').textContent = division.longText;
+      detailsContainer.querySelector('.division-short-text').textContent = division.location;
     }
   }
 
